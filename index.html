@@ -1,123 +1,97 @@
-
-<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Jayscope</title>
-    <link rel="icon" href="Logo-PixTeller.png">
+    <script>
+        function insert(num) {
+            document.form.textveiw.value = document.form.textveiw.value + num;
+        }
+
+        function equal() {
+            var exp = document.form.textveiw.value;
+            document.form.textveiw.value = eval(exp);
+        }
+
+        function clean() {
+            document.form.textveiw.value = "";
+        }
+
+        function back() {
+            var exp = document.form.textveiw.value;
+            document.form.textveiw.value = exp.substring(0, exp.length - 1);
+        }
+    </script>
     <style>
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        * {
+            margin: 0;
+            padding: 0;
         }
         
-        h1 {
-            align: center;
-            font-family: fantasy;
-            font-size: 50px;
-            color: rgb(0, 191, 255);
+        .button {
+            width: 50;
+            height: 50;
+            font-size: 25;
+            margin: 2;
+            cursor: pointer;
         }
         
-        p {
-            font-family: fantasy;
-            font-size: 25px;
-            color: rgb(25, 25, 112);
+        .textveiw {
+            width: 217;
+            margin: 5;
+            font-size: 25;
+            padding: 5;
         }
         
-        body {
-            background-color: rgb(230, 230, 250);
+        .main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
         }
         
-        ol {
-            font-size: 20px;
-            color: rgb(25, 25, 112);
-        }
-        
-        h4 {
-            font-family: fantasy;
-            font-size: 30px;
-            color: rgb(25, 25, 112);
-        }
-        
-        a {
-            color: rgb(25, 25, 112);
-            text-decoration: none;
-        }
-        
-        .links {
-            font-family: fantasy;
-            padding: 3px;
-            width: 500px;
+        .bg {
+            background: linear-gradient(to right, red, blue);
+            height: 100%;
         }
     </style>
-
 </head>
 
 <body>
-
-
-        <div><img src="Logo-PixTeller.png" width="300px"></div>
-
-
-    <div>
-        <p>Hello, I'm Jay. I'm in Grade 5 and I live in Pune. I created this Website to show my programming skills and drawings I created in my free time. As you can see in the bottom left cornor There are two lists one of programmings and one of Drawings.</p>
+    <div class="bg"></div>
+    <div class="main">
+        <form name="form">
+            <input class="textveiw" name="textveiw">
+        </form>
+        <table>
+            <tr>
+                <td><input class="button" type="button" value="C" onclick="clean()"></td>
+                <td><input class="button" type="button" value="<" onclick="back()"></td>
+                <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+                <td><input class="button" type="button" value="x" onclick="insert('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
+                <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
+                <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+                <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+                <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
+                <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
+                <td rowspan="5"><input class="button" type="button" style="height:106;" value="=" onclick="equal()"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="button" type="button" style="width: 106;" value="0" onclick="insert(0)"></td>
+                <td><input class="button" type="button" value="." onclick="insert('.')"></td>
+            </tr>
+        </table>
     </div>
-
-    <div>
-        <h4>Programmings</h4>
-    </div>
-    <div class="links">
-        <ol>
-      	<li><a target="_blank" href="/rabbit.html">Rabbit</a></li>
-      	<li><a target="_blank" href="/Recipe%20Book.html">Rcipe book</a></li>
-      	<li><a target="_blank" href="/Poem.html">Love, Peace, and Poetry</a></li>
-      	<li><a target="_blank" href="/leapord.html">Leapord</a></li>
-      	<li><a target="_blank" href="/Jay's%20Blog.html">Jay's Blog</a></li>
-	<li><a target="_blank" href="/travel.html">Travel to London</a></li>
-        <li><a target="_blank" href="/calculator.html">Calculator</a></li>  
-	<li><a target="_blank" href="/indexnew.html">Face Detector</a></li>    
-        </ol>
-    </div>
-    <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.btn {
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: RoyalBlue;
-}
-</style>
-</head>
-<body>
-
-
-<p>
-<div>
-    <h4>Drawings</h4>
-</div>
-</p>
-<a href="/drawing/" download>
-
-<button class="btn"><i class="fa fa-download"></i> Download Drawings</button></a>
-
-
-
-</body>
-</html>
-
 </body>
 
 </html>
